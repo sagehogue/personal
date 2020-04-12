@@ -25,41 +25,16 @@ const Layout = ({ children }) => {
     }
   `)
 
-  const Layout = styled.div`
-    background-color: #daecf2;
-  `
-
-  const Theme = styled.div`
-    margin: 0 auto;
-    max-width: 85vw;
-    @media screen and (max-width: 550px) {
-      max-width: 95vw;
-    }
-  `
   const GlobalStyle = createGlobalStyle`
   body {
     margin: 0;
   }
 `
 
-  // Return desktop view or mobile view, depending on screen size
-  return window.innerWidth < 800 ? (
+  return (
     <>
-      <Layout>
-        <Header siteTitle={data.site.siteMetadata.title} />
-        <Theme style={{}}>
-          <main>{children}</main>
-        </Theme>
-      </Layout>
-    </>
-  ) : (
-    <>
-      <Layout>
-        <Header siteTitle={data.site.siteMetadata.title} />
-        <Theme style={{}}>
-          <main>{children}</main>
-        </Theme>
-      </Layout>
+      <Header siteTitle={data.site.siteMetadata.title} />
+      {children}
       <GlobalStyle />
     </>
   )

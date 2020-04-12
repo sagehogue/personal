@@ -4,11 +4,13 @@ import React from "react"
 import NavBar from "./UI/NavBar/NavBar.js"
 import Hamburger from "./UI/HamburgerMenu/NavMenu"
 
+import { colors } from "../themes/theme"
+
 const StyledHeader = styled.header`
-  background-color: white;
-  margin-bottom: 3rem;
-  padding-top: 2vh;
-  padding-bottom: 2vh;
+  background-color: ${colors.offwhite};
+  padding-top: 1.5rem;
+  padding-bottom: 1.5rem;
+  color: ${colors.skyblue};
 `
 
 const Mobile = () => <Hamburger />

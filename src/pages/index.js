@@ -5,11 +5,21 @@ import styled from "styled-components"
 
 import Layout from "../components/layout"
 import SEO from "../components/seo"
+import Card from "../components/UI/Card/Card"
+
 import GlobalStyles from "../themes/globals"
 
+import Theme from "../themes/theme"
+import { colors } from "../themes/theme"
+
+import { FaRegKeyboard } from "react-icons/fa"
+import { FaPaintBrush } from "react-icons/fa"
+import { FaAddressBook } from "react-icons/fa"
 // CSS Vars
 const styles = {
   font: "Montserrat",
+  maxWidthDesktop: "85vw",
+  maxWidth: "95vw",
 }
 // CSS Todos
 // I think I need make a separate mobile layout to render if
@@ -18,13 +28,16 @@ const styles = {
 
 // Styled Components
 const Hero = styled.section`
-  max-height: 84vh;
   width: 100%;
   display: grid;
   font-family: ${styles.font}, arial;
   grid-template-rows: repeat(3, 1fr);
   grid-template-columns: repeat(5, 1fr);
   gap: 1rem;
+  padding-bottom: 2rem;
+  // Unsure about this padding - get input
+  padding-top: 2rem;
+  height: 85vh;
   & .gatsby-image-wrapper:first-of-type {
     grid-row: 1 / 2;
     grid-column: 2 / 6;
@@ -54,6 +67,7 @@ const Hero = styled.section`
     }
   }
 `
+
 const Greeting = styled.h1`
   overflow: hidden;
   grid-row: 1 / 2;
@@ -145,6 +159,33 @@ const Intro = styled.h2`
   }
 `
 
+const AboutSection = styled.section`
+  height: 70vh;
+  text-align: center;
+  background-color: inherit;
+  font-size: 2rem;
+  line-height: 3.25rem;
+  & h3 {
+    font-size: 2.5rem;
+    padding: 3.5rem 0;
+    line-height: 4.25rem;
+  }
+  & :last-child {
+    margin-top: 3.25rem;
+    padding: 1.5rem 0;
+  }
+`
+
+const SkillsSection = styled.section`
+  height: 75vh;
+  background-color: ${colors.skyblue};
+  display: flex;
+  justify-content: space-around;
+  & div {
+    margin-top: 3rem;
+  }
+`
+
 const Highlight = styled.span`
   background-color: rgba(252, 245, 50, 0.75);
 `
@@ -201,29 +242,72 @@ const IndexPage = () => {
     <>
       <Layout>
         <SEO title="Home" />
-        <Hero>
-          <Greeting>
-            Hi,
-            <br />
-            I'm
-            <br />
-            <Highlight>Sage</Highlight>
-          </Greeting>
-          <Img
-            key={data.portland.id}
-            fluid={data.portland.childImageSharp.fluid}
-          />
-          <Img key={data.code.id} fluid={data.code.childImageSharp.fluid} />
-          <Img key={data.laptop.id} fluid={data.laptop.childImageSharp.fluid} />
+        <Theme color>
+          <main>
+            <Hero>
+              <Greeting>
+                Hi,
+                <br />
+                I'm
+                <br />
+                <Highlight>Sage</Highlight>
+              </Greeting>
+              <Img
+                key={data.portland.id}
+                fluid={data.portland.childImageSharp.fluid}
+              />
+              <Img key={data.code.id} fluid={data.code.childImageSharp.fluid} />
+              <Img
+                key={data.laptop.id}
+                fluid={data.laptop.childImageSharp.fluid}
+              />
 
-          {/* {data.images.nodes.map(image => (
+              {/* {data.images.nodes.map(image => (
           <Img key={image.id} fluid={image.childImageSharp.fluid} />
         ))} */}
-          <Intro>
-            a <Highlight>web developer</Highlight> & entrepreneur headquartered
-            in the silicon forest, <Highlight>Portland, OR.</Highlight>
-          </Intro>
-        </Hero>
+              <Intro>
+                a <Highlight>web developer</Highlight> & entrepreneur
+                headquartered in the silicon forest,{" "}
+                <Highlight>Portland, OR.</Highlight>
+              </Intro>
+            </Hero>
+          </main>
+        </Theme>
+        <Theme>
+          <AboutSection>
+            <h3>
+              Independent.
+              <br />
+              Impassioned.
+              <br />
+              Iconoclastic.
+            </h3>
+            <p>
+              I design & develop professional, dynamic web pages and
+              applications for small business owners, artists, activists, and
+              free thinkers.
+            </p>
+          </AboutSection>
+        </Theme>
+        <Theme color>
+          <SkillsSection>
+            <div>
+              <Card icon={<FaPaintBrush />} title={"Design"}></Card>
+              <span></span>
+            </div>
+            <div>
+              <Card
+                icon={<FaRegKeyboard />}
+                title={"Front-end Development"}
+              ></Card>
+              <span></span>
+            </div>
+            <div>
+              <Card icon={<FaAddressBook />} title={"Marketing"}></Card>
+              <span></span>
+            </div>
+          </SkillsSection>
+        </Theme>
       </Layout>
       <GlobalStyles />
     </>

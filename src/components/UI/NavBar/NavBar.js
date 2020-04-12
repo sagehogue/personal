@@ -2,6 +2,8 @@ import React from "react"
 import { Link } from "gatsby"
 import styled from "styled-components"
 
+import { colors } from "../../../themes/theme"
+
 import { FaWrench } from "react-icons/fa"
 import { FaEnvelope } from "react-icons/fa"
 import { FaHome } from "react-icons/fa"
@@ -13,13 +15,14 @@ const Navigation = styled.nav`
   flex-direction: row;
   justify-content: flex-end;
   margin: 0;
+  background-color: ${colors.offwhite};
 `
 const activeClass = "active"
 const StyledLink = styled(props => (
   <Link activeClassName={activeClass} {...props} />
 ))`
   transition: all 0.2s;
-  color: rgba(13, 135, 74, 1);
+  color: ${colors.deepblue};
   font-size: 2rem;
   text-decoration: none;
   border-right: 2px solid;
