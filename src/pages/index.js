@@ -312,7 +312,7 @@ const IndexPage = () => {
       <GlobalStyles />
     </>
   )
-  return window.innerWidth < 768 ? Desktop : Desktop
+  return Desktop
 }
 
 export default IndexPage

@@ -20,7 +20,14 @@ const Desktop = () => (
     <NavBar />
   </StyledHeader>
 )
-
-const Header = () => (window.innerWidth < 800 ? <Mobile /> : <Desktop />)
+const Header = () => {
+  return typeof window !== "undefined" ? (
+    window.innerWidth < 800 ? (
+      <Mobile />
+    ) : (
+      <Desktop />
+    )
+  ) : null
+}
 
 export default Header
