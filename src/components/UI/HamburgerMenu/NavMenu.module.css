@@ -1,0 +1,52 @@
+:root {
+  --active-link-col: orange;
+  --desktop-menu-bg-col: transparent;
+  --nav-link-col: lightblue;
+  --tray-item-color: #f5fffad7;
+}
+
+.NavMenu {
+  overflow: hidden;
+  grid-column: 1 / 12;
+  grid-row: 1 / 2;
+  width: 100%;
+  max-width: 100%;
+  height: 15vh;
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: space-between;
+}
+
+.DesktopMenu {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  grid-column: 2 / 11;
+  grid-row: 1 / 2;
+  background-color: var(--desktop-menu-bg-col);
+  height: 75%;
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
+}
+.NavMenu a,
+.NavMenu a:visited,
+.DesktopMenu a,
+.DesktopMenu a:visited {
+  text-decoration: none;
+  color: var(--tray-item-color);
+}
+.NavMenu a.active,
+.DesktopMenu a.active {
+  color: var(--active-link-col);
+}
+
+.DesktopMenu a:hover:not(.active) {
+  color: rgba(245, 255, 250, 1);
+}
+
+.active {
+  color: var(--active-link-col);
+}
+
+.closed {
+}

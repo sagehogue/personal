@@ -9,8 +9,10 @@ import React from "react"
 import PropTypes from "prop-types"
 import { useStaticQuery, graphql } from "gatsby"
 
+import styled from "styled-components"
+import { createGlobalStyle } from "styled-components"
+
 import Header from "./header"
-import "./layout.css"
 
 const Layout = ({ children }) => {
   const data = useStaticQuery(graphql`
@@ -23,23 +25,42 @@ const Layout = ({ children }) => {
     }
   `)
 
-  return (
+  const Layout = styled.div`
+    background-color: #daecf2;
+  `
+
+  const Theme = styled.div`
+    margin: 0 auto;
+    max-width: 85vw;
+    @media screen and (max-width: 550px) {
+      max-width: 95vw;
+    }
+  `
+  const GlobalStyle = createGlobalStyle`
+  body {
+    margin: 0;
+  }
+`
+
+  // Return desktop view or mobile view, depending on screen size
+  return window.innerWidth < 800 ? (
     <>
-      <Header siteTitle={data.site.siteMetadata.title} />
-      <div
-        style={{
-          margin: `0 auto`,
-          maxWidth: 960,
-          padding: `0 1.0875rem 1.45rem`,
-        }}
-      >
-        <main>{children}</main>
-        <footer>
-          © {new Date().getFullYear()}, Built with
-          {` `}
-          <a href="https://www.gatsbyjs.org">Gatsby</a>
-        </footer>
-      </div>
+      <Layout>
+        <Header siteTitle={data.site.siteMetadata.title} />
+        <Theme style={{}}>
+          <main>{children}</main>
+        </Theme>
+      </Layout>
+    </>
+  ) : (
+    <>
+      <Layout>
+        <Header siteTitle={data.site.siteMetadata.title} />
+        <Theme style={{}}>
+          <main>{children}</main>
+        </Theme>
+      </Layout>
+      <GlobalStyle />
     </>
   )
 }
