@@ -14,7 +14,7 @@ import { colors } from "../themes/theme"
 
 import { FaRegKeyboard } from "react-icons/fa"
 import { FaPaintBrush } from "react-icons/fa"
-import { FaAddressBook } from "react-icons/fa"
+import { FaBook } from "react-icons/fa"
 // CSS Vars
 const styles = {
   font: "Montserrat",
@@ -74,7 +74,7 @@ const Greeting = styled.h1`
   grid-column: 1 / 2;
   margin: auto;
   font-size: 4rem;
-  color: #417b8e;
+  color: ${colors.offwhite};
   text-shadow: -1px 1px 2px #000, 1px 1px 2px #000, 1px -1px 0 #000,
     -1px -1px 0 #000;
   text-align: center;
@@ -128,7 +128,7 @@ const Intro = styled.h2`
   grid-column: 3 / 6;
   margin: 0;
   font-size: 3rem;
-  color: #417b8e;
+  color: ${colors.offwhite};
   text-shadow: -1px 1px 2px #000, 1px 1px 2px #000, 1px -1px 0 #000,
     -1px -1px 0 #000;
   text-align: center;
@@ -160,7 +160,7 @@ const Intro = styled.h2`
 `
 
 const AboutSection = styled.section`
-  height: 70vh;
+  height: 90vh;
   text-align: center;
   background-color: inherit;
   font-size: 2rem;
@@ -177,7 +177,7 @@ const AboutSection = styled.section`
 `
 
 const SkillsSection = styled.section`
-  height: 75vh;
+  height: 90vh;
   background-color: ${colors.skyblue};
   display: flex;
   justify-content: space-around;
@@ -292,19 +292,36 @@ const IndexPage = () => {
         <Theme color>
           <SkillsSection>
             <div>
-              <Card icon={<FaPaintBrush />} title={"Design"}></Card>
-              <span></span>
+              <Card
+                icon={<FaPaintBrush />}
+                title={"Designer"}
+                description={`Each design I make consists of two things: scratch and creative energy. 
+                  Every product I deliver does one thing: stand out.`}
+              ></Card>
             </div>
             <div>
               <Card
                 icon={<FaRegKeyboard />}
-                title={"Front-end Development"}
-              ></Card>
-              <span></span>
+                title={"Web Developer"}
+                description={`Always learning new ways to use my skills, I love to see my creations take form on screen. Tinker every day.`}
+              >
+                <h4>My tools:</h4>
+                <ul>
+                  <li>HTML5</li>
+                  <li>CSS3</li>
+                  <li>Javascript</li>
+                  <li>React</li>
+                  <li>Gatsby</li>
+                  <li>Google Firebase</li>
+                </ul>
+              </Card>
             </div>
             <div>
-              <Card icon={<FaAddressBook />} title={"Marketing"}></Card>
-              <span></span>
+              <Card
+                icon={<FaBook />}
+                title={"Mentor"}
+                description={`Coding is best done with others! That has been my experience and so I try my best to pay it`}
+              ></Card>
             </div>
           </SkillsSection>
         </Theme>
