@@ -5,7 +5,7 @@ import styled from "styled-components"
 
 import Layout from "../components/layout"
 import SEO from "../components/seo"
-import Card from "../components/UI/Card/CardSides"
+import Card from "../components/UI/Card/Card"
 
 import GlobalStyles from "../themes/globals"
 
@@ -34,7 +34,7 @@ const Hero = styled.section`
   grid-template-rows: repeat(3, 1fr);
   grid-template-columns: repeat(5, 1fr);
   gap: 1rem;
-  padding-bottom: 3rem;
+  padding-bottom: 2rem;
   // Unsure about this padding - get input
   padding-top: 2rem;
   height: 80vh;
@@ -98,9 +98,9 @@ const Greeting = styled.h1`
     line-height: 4.5rem;
     font-size: 3.5rem;
   }
-  @media screen and (max-width: 1800px) and (max-height: 900px) {
+  @media screen and (max-width: 2000px) and (max-height: 1100px) {
     line-height: 4rem;
-    font-size: 3rem;
+    font-size: 3.5rem;
   }
 
   @media screen and (max-width: 1100px) {
@@ -270,9 +270,8 @@ const IndexPage = () => {
           <Img key={image.id} fluid={image.childImageSharp.fluid} />
         ))} */}
               <Intro>
-                a web developer & entrepreneur
-                headquartered in the silicon forest,{" "}
-                Portland, OR.
+                a web developer & entrepreneur headquartered in the silicon
+                forest, Portland, OR.
               </Intro>
             </Hero>
           </main>
@@ -309,9 +308,15 @@ const IndexPage = () => {
                 title={"Web Developer"}
                 description={`Always learning new ways to use my skills, I love to see my creations take form on screen. Tinker every day.`}
                 listTitle={"My tools:"}
-                listItems={["HTML5", "CSS3", "JavaScript", "React", "Gatsby", "Google Firebase"]}
-              >
-              </Card>
+                listItems={[
+                  "HTML5",
+                  "CSS3",
+                  "JavaScript",
+                  "React",
+                  "Gatsby",
+                  "Google Firebase",
+                ]}
+              ></Card>
             </div>
             <div>
               <Card

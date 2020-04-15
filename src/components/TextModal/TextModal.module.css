@@ -1,12 +1,12 @@
 :root {
-    --modal-font-size: 1.75rem;
-    --modal-font-weight: 650;
-    --modal-title-weight: 900;
-    --modal-title-size: 2rem;
-    --translate-left: -150%;
-    --translate-right: 150%;
-    --text-modal-bg-col: rgb(216, 222, 228);
-    --button-size: 2rem;
+  --modal-font-size: 1.75rem;
+  --modal-font-weight: 650;
+  --modal-title-weight: 900;
+  --modal-title-size: 2rem;
+  --translate-left: -150%;
+  --translate-right: 150%;
+  --text-modal-bg-col: rgb(216, 222, 228);
+  --button-size: 2rem;
 }
 
 /* TODOS
@@ -15,44 +15,45 @@ Current Issue: a lot of this styling needs to be moved to the splash page I thin
 */
 
 .TextModal {
-    position: relative;
-    z-index: 5;
-    transition: all .5s;
-    padding: .75rem 1.5rem;
-    background-color: var(--card-bg-color);
-    color: rgb(104, 99, 99);
-    font-size: var(--button-size);
-    border-radius: 15px;
-    font-weight:  var(--modal-font-weight);
-    transition: all .5s;
-    width: 90%;
-    display: inline-block;
+  position: relative;
+  z-index: 5;
+  transition: all 0.5s;
+  padding: 0.75rem 1.5rem;
+  background-color: var(--card-bg-color);
+  color: #fcfcfc;
+  font-size: var(--button-size);
+  border-radius: 15px;
+  font-weight: var(--modal-font-weight);
+  transition: all 0.5s;
+  width: 90%;
+  display: inline-block;
 }
 
 .TextModal div {
-    margin: .5rem 0;
+  margin: 0.5rem 0;
 }
 
 .TextModal > h3 {
-    text-align: center;
-    font-size: var(--modal-title-size);
-    font-weight: var(--modal-title-weight);
-    margin: 0;
+  text-align: center;
+  font-size: var(--modal-title-size);
+  font-weight: var(--modal-title-weight);
+  margin: 0;
 }
 
 .TextModal p {
-    font-size: var(--modal-font-size);
-    margin-bottom: .5rem;
-    font-weight: var(--modal-font-weight);
+  font-size: var(--modal-font-size);
+  margin-bottom: 0.5rem;
+  font-weight: var(--modal-font-weight);
 }
 
-.TextModal h3, .TextModal p {
-    transition: color .5s;
+.TextModal h3,
+.TextModal p {
+  transition: color 0.5s;
 }
 
 .TextModal.hover {
-    /* box-shadow: .5rem 1rem 5px 1px rgba(3, 3, 3, .5); */
-    box-shadow: .25rem .5rem 2.5px 1px rgba(3, 3, 3, .5);
+  /* box-shadow: .5rem 1rem 5px 1px rgba(3, 3, 3, .5); */
+  box-shadow: 0.25rem 0.5rem 2.5px 1px rgba(3, 3, 3, 0.5);
 }
 
 /* .TextModal.hover:active {
@@ -61,10 +62,10 @@ Current Issue: a lot of this styling needs to be moved to the splash page I thin
 } */
 
 .TextModal.hover h3 {
-    color: cornflowerblue;
+  color: cornflowerblue;
 }
 .TextModal hr {
-    margin: 1rem .5rem;
+  margin: 1rem 0.5rem;
 }
 
 /* .TextModal:nth-child(even) {
@@ -107,34 +108,30 @@ Current Issue: a lot of this styling needs to be moved to the splash page I thin
     transform: translateX(var(--translate-left));
 } */
 
-
-
 .smallVertMargin {
-    margin: 2.5rem 0;
+  margin: 2.5rem 0;
 }
 
 .largeWidth {
-    max-width: 85%;
+  max-width: 85%;
 }
 @media (min-width: 600px) {
-    /* .TextModal {
+  /* .TextModal {
         font-size: calc(var(--button-size) * 1.2)
     } */
-    .TextModal > p {
-        font-size: calc(var(--modal-font-size) * 1.1)
-    }
-    .TextModal > h3 {
-        font-size: calc(var(--modal-title-size) * 1.3); /*was 3.5rems */
-    }
-    .TextModal div {
-        /* margin: 2rem 0; */
-        text-align: center;
-        font-size: calc(var(--button-size) * 1);
-        font-size: calc(var(--modal-font-size) * 1)
-    }
+  .TextModal > p {
+    font-size: calc(var(--modal-font-size) * 1.1);
+  }
+  .TextModal > h3 {
+    font-size: calc(var(--modal-title-size) * 1.3); /*was 3.5rems */
+  }
+  .TextModal div {
+    /* margin: 2rem 0; */
+    text-align: center;
+    font-size: calc(var(--button-size) * 1);
+    font-size: calc(var(--modal-font-size) * 1);
+  }
 }
 
 @media (min-width: 600px) {
-
 }
-
