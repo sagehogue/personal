@@ -1,4 +1,4 @@
-import React from "react"
+import React, { useState } from "react"
 import styled from "styled-components"
 
 import { colors } from "../../../themes/theme"
@@ -60,4 +60,24 @@ const Card = props => {
   )
 }
 
-export default Card
+const NewCard = props => {
+  const [flip, setFlip] = useState(false)
+  return <div
+    className={`card ${flip ? 'flip' : ''}`}
+    onClick={() => {
+      setFlip(!flip)
+    }}>
+    <div className="front">
+      {props.icon}
+      <h3>{props.title}</h3>
+      <div className="front-desc">
+        {props.options.map(option => {
+          return <div className="props-option">{option}</div>
+        })}
+      </div>
+    </div>
+    <div className="back">{props.answer}</div>
+  </div>
+}
+
+export default NewCard

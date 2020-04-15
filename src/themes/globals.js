@@ -6,6 +6,8 @@ const GlobalStyle = createGlobalStyle`
 }
 body {
   min-width: 100vw;
+  max-width: 100vw;
+  overflow-x: hidden;
 }
 html {
   overflow: scroll-y;

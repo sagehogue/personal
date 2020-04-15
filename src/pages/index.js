@@ -5,7 +5,7 @@ import styled from "styled-components"
 
 import Layout from "../components/layout"
 import SEO from "../components/seo"
-import Card from "../components/UI/Card/Card"
+import Card from "../components/UI/Card/CardSides"
 
 import GlobalStyles from "../themes/globals"
 
@@ -181,7 +181,7 @@ const SkillsSection = styled.section`
   background-color: ${colors.skyblue};
   display: flex;
   justify-content: space-around;
-  & div {
+  & > div {
     margin-top: 3rem;
   }
 `
@@ -304,16 +304,9 @@ const IndexPage = () => {
                 icon={<FaRegKeyboard />}
                 title={"Web Developer"}
                 description={`Always learning new ways to use my skills, I love to see my creations take form on screen. Tinker every day.`}
+                listTitle={"My tools:"}
+                listItems={["HTML5", "CSS3", "JavaScript", "React", "Gatsby", "Google Firebase"]}
               >
-                <h4>My tools:</h4>
-                <ul>
-                  <li>HTML5</li>
-                  <li>CSS3</li>
-                  <li>Javascript</li>
-                  <li>React</li>
-                  <li>Gatsby</li>
-                  <li>Google Firebase</li>
-                </ul>
               </Card>
             </div>
             <div>
