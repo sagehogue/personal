@@ -11,7 +11,6 @@ export let colors = {
 
 const Theme = styled.div`
   margin: 0 auto;
-  max-width: 85vw;
   font-family: Montserrat, arial;
   @media screen and (max-width: 550px) {
     max-width: 95vw;
@@ -19,7 +18,7 @@ const Theme = styled.div`
 `
 const Background = styled.div`
   background-color: ${props =>
-    props.isColored ? colors.skyblue : colors.offwhite};
+    props.isColored ? colors.deepblue : colors.offwhite};
   width: 100%;
 `
 

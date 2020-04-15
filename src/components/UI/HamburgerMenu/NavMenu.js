@@ -14,7 +14,7 @@ import { FaHome } from "react-icons/fa"
 import classes from "./NavMenu.module.css"
 
 import styled from "styled-components"
-const NavLink = styled.li`
+const NavLink = styled(Link)`
   transition: all 0.5s;
   list-style: none;
   &.active {
@@ -74,7 +74,7 @@ class NavMenu extends Component {
             </NavLink>
           </Link>
 
-          <Link to="/story" activeClassName={classes.active}>
+          <Link to="/projects" activeClassName={classes.active}>
             <NavLink>
               <TrayItem clickHandler={this.handlePageChange}>
                 <FaWrench />
@@ -82,7 +82,7 @@ class NavMenu extends Component {
             </NavLink>
           </Link>
 
-          <Link to="/about" activeClassName={classes.active}>
+          <Link to="/" activeClassName={classes.active}>
             <NavLink>
               <TrayItem clickHandler={this.handlePageChange}>
                 <FaEnvelope />

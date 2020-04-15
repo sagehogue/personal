@@ -53,7 +53,7 @@ const NavBar = function() {
       <StyledLink to="/projects">
         <FaWrench />
       </StyledLink>
-      <StyledLink to="/contact">
+      <StyledLink to="/">
         <FaEnvelope />
       </StyledLink>
     </Navigation>

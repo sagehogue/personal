@@ -1,0 +1,26 @@
+.Backdrop {
+    position: absolute;
+    left: 0;
+    top: 0;
+    min-width: 100vw;
+    min-height: 100vh;
+    background-color: rgba(3, 3, 3, .4);
+    z-index: 25;
+    transition: all .15s;
+}
+
+.Hide {
+    opacity: 0;
+    min-width: 0;
+    min-height: 0;
+    top: 50%;
+    left: 50%;
+    z-index: 0;
+    /* right: 50%; */
+}
+
+
+/* Over 50 makes it cover the nav menu -- desired behavior for portfolioitem */
+.HigherZVal {
+    z-index: 55;
+}

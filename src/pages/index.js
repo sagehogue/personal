@@ -34,10 +34,10 @@ const Hero = styled.section`
   grid-template-rows: repeat(3, 1fr);
   grid-template-columns: repeat(5, 1fr);
   gap: 1rem;
-  padding-bottom: 2rem;
+  padding-bottom: 3rem;
   // Unsure about this padding - get input
   padding-top: 2rem;
-  height: 85vh;
+  height: 80vh;
   & .gatsby-image-wrapper:first-of-type {
     grid-row: 1 / 2;
     grid-column: 2 / 6;
@@ -68,6 +68,9 @@ const Hero = styled.section`
   }
 `
 
+// Removed text shadow code - fun effect but not necessary for desired look.
+// text-shadow: -1px 1px 2px #000, 1px 1px 2px #000, 1px -1px 0 #000,
+
 const Greeting = styled.h1`
   overflow: hidden;
   grid-row: 1 / 2;
@@ -75,7 +78,6 @@ const Greeting = styled.h1`
   margin: auto;
   font-size: 4rem;
   color: ${colors.offwhite};
-  text-shadow: -1px 1px 2px #000, 1px 1px 2px #000, 1px -1px 0 #000,
     -1px -1px 0 #000;
   text-align: center;
   max-width: 100%;
@@ -95,6 +97,10 @@ const Greeting = styled.h1`
   @media screen and (max-width: 1800px) {
     line-height: 4.5rem;
     font-size: 3.5rem;
+  }
+  @media screen and (max-width: 1800px) and (max-height: 900px) {
+    line-height: 4rem;
+    font-size: 3rem;
   }
 
   @media screen and (max-width: 1100px) {
@@ -129,8 +135,6 @@ const Intro = styled.h2`
   margin: 0;
   font-size: 3rem;
   color: ${colors.offwhite};
-  text-shadow: -1px 1px 2px #000, 1px 1px 2px #000, 1px -1px 0 #000,
-    -1px -1px 0 #000;
   text-align: center;
   line-height: 3.5rem;
   margin: auto;
@@ -168,7 +172,7 @@ const AboutSection = styled.section`
   & h3 {
     font-size: 2.5rem;
     padding: 3.5rem 0;
-    line-height: 4.25rem;
+    line-height: 6rem;
   }
   & :last-child {
     margin-top: 3.25rem;
@@ -178,7 +182,7 @@ const AboutSection = styled.section`
 
 const SkillsSection = styled.section`
   height: 90vh;
-  background-color: ${colors.skyblue};
+  background-color: inherit;
   display: flex;
   justify-content: space-around;
   & > div {
@@ -250,7 +254,7 @@ const IndexPage = () => {
                 <br />
                 I'm
                 <br />
-                <Highlight>Sage</Highlight>
+                Sage
               </Greeting>
               <Img
                 key={data.portland.id}
@@ -266,9 +270,9 @@ const IndexPage = () => {
           <Img key={image.id} fluid={image.childImageSharp.fluid} />
         ))} */}
               <Intro>
-                a <Highlight>web developer</Highlight> & entrepreneur
+                a web developer & entrepreneur
                 headquartered in the silicon forest,{" "}
-                <Highlight>Portland, OR.</Highlight>
+                Portland, OR.
               </Intro>
             </Hero>
           </main>
