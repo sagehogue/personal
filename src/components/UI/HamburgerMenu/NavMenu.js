@@ -82,7 +82,7 @@ class NavMenu extends Component {
             </NavLink>
           </Link>
 
-          <Link to="/" activeClassName={classes.active}>
+          <Link to="/contact" activeClassName={classes.active}>
             <NavLink>
               <TrayItem clickHandler={this.handlePageChange}>
                 <FaEnvelope />

@@ -1,8 +1,10 @@
-import React from "react"
+import React, { useState } from "react"
 import { Link } from "gatsby"
 import styled from "styled-components"
 
 import { colors } from "../../../themes/theme"
+
+import ContactForm from "../../ContactForm/ContactForm"
 
 import { FaWrench } from "react-icons/fa"
 import { FaEnvelope } from "react-icons/fa"
@@ -53,7 +55,7 @@ const NavBar = function() {
       <StyledLink to="/projects">
         <FaWrench />
       </StyledLink>
-      <StyledLink to="/">
+      <StyledLink to="/contact">
         <FaEnvelope />
       </StyledLink>
     </Navigation>

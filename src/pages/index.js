@@ -1,7 +1,7 @@
 import React from "react"
 import { graphql, useStaticQuery } from "gatsby"
 import Img from "gatsby-image"
-import styled from "styled-components"
+import styled, { keyframes } from "styled-components"
 
 import Layout from "../components/layout"
 import SEO from "../components/seo"
@@ -28,7 +28,8 @@ const styles = {
 
 // Styled Components
 const Hero = styled.section`
-  width: 100%;
+  max-width: 85%;
+  margin: auto;
   display: grid;
   font-family: ${styles.font}, arial;
   grid-template-rows: repeat(3, 1fr);
@@ -37,7 +38,10 @@ const Hero = styled.section`
   padding-bottom: 2rem;
   // Unsure about this padding - get input
   padding-top: 2rem;
-  height: 80vh;
+  height: 90vh;
+  & .animate {
+    animation-fill-mode: forwards;
+  }
   & .gatsby-image-wrapper:first-of-type {
     grid-row: 1 / 2;
     grid-column: 2 / 6;
@@ -70,6 +74,67 @@ const Hero = styled.section`
 
 // Removed text shadow code - fun effect but not necessary for desired look.
 // text-shadow: -1px 1px 2px #000, 1px 1px 2px #000, 1px -1px 0 #000,
+
+// The animations (built with 10sec use case in mind)
+
+const firstAnimation = keyframes`
+0% {
+  color: transparent;
+}
+3% {
+  color: transparent;
+}
+5% {
+  color: hotpink;
+}
+8% {
+  color: #f7f7f7
+} 
+`
+
+const FirstToAppear = styled.span`
+  animation: ${firstAnimation} 10s ease-in;
+`
+
+const secondAnimation = keyframes`
+0% {
+  color: transparent
+}
+11% {
+  color: transparent;
+}
+13% {
+  color: hotpink;
+}
+16% {
+  color: #f7f7f7;
+}
+`
+
+const SecondToAppear = styled.span`
+  animation: ${secondAnimation} 10s ease-in;
+`
+
+const thirdAnimation = keyframes`
+0% {
+  transform: translateX(70vw)
+}
+19% {
+  transform: translateX(70vw)
+}
+25% {
+  transform: translateX(-2rem)
+}
+28% {
+  transform: translateX(1rem)
+}
+31% {
+  transform: translateX(-.5rem)
+}
+33% {
+  transform: translateX(0)
+}
+`
 
 const Greeting = styled.h1`
   overflow: hidden;
@@ -141,7 +206,7 @@ const Intro = styled.h2`
   max-height: 100%;
   max-width: 100%;
   min-width: 100%;
-
+  animation: ${thirdAnimation} 10s ease-in;
   @media screen and (min-width: 2000px) {
     line-height: 4.5rem;
   }
@@ -164,6 +229,8 @@ const Intro = styled.h2`
 `
 
 const AboutSection = styled.section`
+  max-width: 85%;
+  margin: auto;
   height: 90vh;
   text-align: center;
   background-color: inherit;
@@ -181,6 +248,8 @@ const AboutSection = styled.section`
 `
 
 const SkillsSection = styled.section`
+  max-width: 85%;
+  margin: auto;
   height: 90vh;
   background-color: inherit;
   display: flex;
@@ -246,15 +315,17 @@ const IndexPage = () => {
     <>
       <Layout>
         <SEO title="Home" />
-        <Theme color>
-          <main>
+        <main>
+          <Theme color>
             <Hero>
               <Greeting>
-                Hi,
+                <FirstToAppear className={"animate first"}>Hi,</FirstToAppear>
                 <br />
-                I'm
-                <br />
-                Sage
+                <SecondToAppear className={"animate second"}>
+                  I'm
+                  <br />
+                  Sage{" "}
+                </SecondToAppear>
               </Greeting>
               <Img
                 key={data.portland.id}
@@ -274,59 +345,59 @@ const IndexPage = () => {
                 forest, Portland, OR.
               </Intro>
             </Hero>
-          </main>
-        </Theme>
-        <Theme>
-          <AboutSection>
-            <h3>
-              Independent.
-              <br />
-              Impassioned.
-              <br />
-              Iconoclastic.
-            </h3>
-            <p>
-              I design & develop professional, dynamic web pages and
-              applications for small business owners, artists, activists, and
-              free thinkers.
-            </p>
-          </AboutSection>
-        </Theme>
-        <Theme color>
-          <SkillsSection>
-            <div>
-              <Card
-                icon={<FaPaintBrush />}
-                title={"Designer"}
-                description={`Each design I make consists of two things: scratch and creative energy. 
+          </Theme>
+          <Theme>
+            <AboutSection>
+              <h3>
+                Independent.
+                <br />
+                Impassioned.
+                <br />
+                Iconoclastic.
+              </h3>
+              <p>
+                I design & develop professional, dynamic web pages and
+                applications for small business owners, artists, activists, and
+                free thinkers.
+              </p>
+            </AboutSection>
+          </Theme>
+          <Theme color>
+            <SkillsSection>
+              <div>
+                <Card
+                  icon={<FaPaintBrush />}
+                  title={"Designer"}
+                  description={`Each design I make consists of two things: scratch and creative energy. 
                   Every product I deliver does one thing: stand out.`}
-              ></Card>
-            </div>
-            <div>
-              <Card
-                icon={<FaRegKeyboard />}
-                title={"Web Developer"}
-                description={`Always learning new ways to use my skills, I love to see my creations take form on screen. Tinker every day.`}
-                listTitle={"My tools:"}
-                listItems={[
-                  "HTML5",
-                  "CSS3",
-                  "JavaScript",
-                  "React",
-                  "Gatsby",
-                  "Google Firebase",
-                ]}
-              ></Card>
-            </div>
-            <div>
-              <Card
-                icon={<FaBook />}
-                title={"Mentor"}
-                description={`Coding is best done with others! That has been my experience and so I try my best to pay it`}
-              ></Card>
-            </div>
-          </SkillsSection>
-        </Theme>
+                ></Card>
+              </div>
+              <div>
+                <Card
+                  icon={<FaRegKeyboard />}
+                  title={"Web Developer"}
+                  description={`Always learning new ways to use my skills, I love to see my creations take form on screen. Tinker every day.`}
+                  listTitle={"My tools:"}
+                  listItems={[
+                    "HTML5",
+                    "CSS3",
+                    "JavaScript",
+                    "React",
+                    "Gatsby",
+                    "Google Firebase",
+                  ]}
+                ></Card>
+              </div>
+              <div>
+                <Card
+                  icon={<FaBook />}
+                  title={"Mentor"}
+                  description={`Coding is best done with others! That has been my experience and so I try my best to pay it`}
+                ></Card>
+              </div>
+            </SkillsSection>
+          </Theme>
+        </main>
       </Layout>
       <GlobalStyles />
     </>
