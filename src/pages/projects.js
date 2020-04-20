@@ -5,37 +5,39 @@ import styled from "styled-components"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 import VisibleBR from "../components/UI/VisibleBR/VisibleBR"
+import Card from "../components/UI/Card/Card"
+import CovidChart from "../components/projects/covidchart/CovidChart"
 
 import GlobalStyles from "../themes/globals"
 import Theme from "../themes/theme"
 import { colors } from "../themes/theme"
 
-import Card from "../components/UI/Card/Card"
 import { FaBookOpen, FaComment, FaTree } from "react-icons/fa"
 
 const Header = styled.header`
   display: flex;
   flex-direction: column;
   width: 100vw;
-  justify-content: space-between;
-  height: 20vh;
+  justify-content: space-around;
+  height: 50vh;
   background-color: ${colors.deepblue};
   & h2,
   & h3 {
     display: block;
     margin: 0 auto;
+    transform: translateY(-3rem);
   }
 
   & h2 {
     padding-top: 1.75rem;
     color: ${colors.offwhite};
     font-size: 2rem;
-    line-height: 3rem;
+    line-height: 3.5rem;
     width: 85%;
   }
 
   & h3 {
-    text-align: end;
+    text-align: center;
     font-weight: 400;
     padding-bottom: 1.75rem;
     color: ${colors.offwhite};
@@ -49,6 +51,7 @@ const ProjectGrid = styled.main`
   justify-content: space-around;
   max-width: 85vw;
   margin: auto;
+  transform: translateY(-5rem);
 `
 
 const projects = () => {
@@ -58,7 +61,8 @@ const projects = () => {
         <Theme>
           <Header>
             <h2>
-              Here I've catalogued the knick-knacks I've made along the way.
+              Here I've catalogued <br />
+              the knick-knacks I've made along the way.
             </h2>
             <h3>Click a card icon to open a project.</h3>
           </Header>
@@ -99,6 +103,7 @@ const projects = () => {
               description={`No storage socket.io application`}
             />
           </ProjectGrid>
+          <CovidChart />
         </Theme>
       </Layout>
       <GlobalStyles />

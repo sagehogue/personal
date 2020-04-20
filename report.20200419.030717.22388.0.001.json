@@ -1,0 +1,398 @@
+
+{
+  "header": {
+    "reportVersion": 1,
+    "event": "Allocation failed - JavaScript heap out of memory",
+    "trigger": "FatalError",
+    "filename": "report.20200419.030717.22388.0.001.json",
+    "dumpEventTime": "2020-04-19T03:07:17Z",
+    "dumpEventTimeStamp": "1587290837427",
+    "processId": 22388,
+    "cwd": "C:\\Users\\Sge\\Desktop\\Dev-2020\\first-complete-website",
+    "commandLine": [
+      "node",
+      "C:\\Users\\Sge\\AppData\\Roaming\\npm\\\\node_modules\\gatsby-cli\\lib\\index.js",
+      "develop"
+    ],
+    "nodejsVersion": "v12.6.0",
+    "wordSize": 64,
+    "arch": "x64",
+    "platform": "win32",
+    "componentVersions": {
+      "node": "12.6.0",
+      "v8": "7.5.288.22-node.14",
+      "uv": "1.30.1",
+      "zlib": "1.2.11",
+      "brotli": "1.0.7",
+      "ares": "1.15.0",
+      "modules": "72",
+      "nghttp2": "1.38.0",
+      "napi": "4",
+      "llhttp": "1.1.4",
+      "http_parser": "2.8.0",
+      "openssl": "1.1.1c",
+      "cldr": "35.1",
+      "icu": "64.2",
+      "tz": "2019a",
+      "unicode": "12.1"
+    },
+    "release": {
+      "name": "node",
+      "headersUrl": "https://nodejs.org/download/release/v12.6.0/node-v12.6.0-headers.tar.gz",
+      "sourceUrl": "https://nodejs.org/download/release/v12.6.0/node-v12.6.0.tar.gz",
+      "libUrl": "https://nodejs.org/download/release/v12.6.0/win-x64/node.lib"
+    },
+    "osName": "Windows_NT",
+    "osRelease": "10.0.18362",
+    "osVersion": "Windows 10 Home",
+    "osMachine": "x86_64",
+    "cpus": [
+      {
+        "model": "Intel(R) Core(TM) i5-4460  CPU @ 3.20GHz",
+        "speed": 3199,
+        "user": 5563671,
+        "nice": 0,
+        "sys": 3608187,
+        "idle": 61765609,
+        "irq": 429078
+      },
+      {
+        "model": "Intel(R) Core(TM) i5-4460  CPU @ 3.20GHz",
+        "speed": 3199,
+        "user": 5563671,
+        "nice": 0,
+        "sys": 3608187,
+        "idle": 61765609,
+        "irq": 429078
+      },
+      {
+        "model": "Intel(R) Core(TM) i5-4460  CPU @ 3.20GHz",
+        "speed": 3199,
+        "user": 5563671,
+        "nice": 0,
+        "sys": 3608187,
+        "idle": 61765609,
+        "irq": 429078
+      },
+      {
+        "model": "Intel(R) Core(TM) i5-4460  CPU @ 3.20GHz",
+        "speed": 3199,
+        "user": 5563671,
+        "nice": 0,
+        "sys": 3608187,
+        "idle": 61765609,
+        "irq": 429078
+      }
+    ],
+    "host": "DESKTOP-UJNMCUK"
+  },
+  "javascriptStack": {
+    "message": "No stack.",
+    "stack": [
+      "Unavailable."
+    ]
+  },
+  "nativeStack": [
+    {
+      "pc": "0x00007ff63bdf6db9",
+      "symbol": "std::basic_ostream<char,std::char_traits<char> >::operator<<+10889"
+    },
+    {
+      "pc": "0x00007ff63bdfa72c",
+      "symbol": "std::basic_ostream<char,std::char_traits<char> >::operator<<+25596"
+    },
+    {
+      "pc": "0x00007ff63bdf96d8",
+      "symbol": "std::basic_ostream<char,std::char_traits<char> >::operator<<+21416"
+    },
+    {
+      "pc": "0x00007ff63bee300b",
+      "symbol": "v8::base::CPU::has_sse+37675"
+    },
+    {
+      "pc": "0x00007ff63c6c8a1e",
+      "symbol": "v8::Isolate::ReportExternalAllocationLimitReached+94"
+    },
+    {
+      "pc": "0x00007ff63c6b0d6a",
+      "symbol": "v8::SharedArrayBuffer::Externalize+842"
+    },
+    {
+      "pc": "0x00007ff63c54256c",
+      "symbol": "v8::internal::Heap::EphemeronKeyWriteBarrierFromCode+1436"
+    },
+    {
+      "pc": "0x00007ff63c54a48f",
+      "symbol": "v8::internal::Heap::OldGenerationSizeOfObjects+4879"
+    },
+    {
+      "pc": "0x00007ff63c540733",
+      "symbol": "v8::internal::Heap::CollectGarbage+1235"
+    },
+    {
+      "pc": "0x00007ff63c53efc4",
+      "symbol": "v8::internal::Heap::AddRetainedMap+2292"
+    },
+    {
+      "pc": "0x00007ff63c55daa5",
+      "symbol": "v8::internal::Factory::NewFillerObject+53"
+    },
+    {
+      "pc": "0x00007ff63c313e0d",
+      "symbol": "v8::internal::interpreter::JumpTableTargetOffsets::iterator::operator=+3757"
+    },
+    {
+      "pc": "0x00007ff63c77170d",
+      "symbol": "v8::internal::SetupIsolateDelegate::SetupHeap+614605"
+    },
+    {
+      "pc": "0x00007ff63c70d287",
+      "symbol": "v8::internal::SetupIsolateDelegate::SetupHeap+203847"
+    },
+    {
+      "pc": "0x00007ff63c722c41",
+      "symbol": "v8::internal::SetupIsolateDelegate::SetupHeap+292353"
+    },
+    {
+      "pc": "0x00007ff63c6dfc33",
+      "symbol": "v8::internal::SetupIsolateDelegate::SetupHeap+17907"
+    },
+    {
+      "pc": "0x000002fc529e3e98",
+      "symbol": ""
+    }
+  ],
+  "javascriptHeap": {
+    "totalMemory": 2174803968,
+    "totalCommittedMemory": 2174803968,
+    "usedMemory": 1999239504,
+    "availableMemory": 56377288,
+    "memoryLimit": 2197815296,
+    "heapSpaces": {
+      "read_only_space": {
+        "memorySize": 262144,
+        "committedMemory": 262144,
+        "capacity": 261832,
+        "used": 31960,
+        "available": 229872
+      },
+      "new_space": {
+        "memorySize": 33554432,
+        "committedMemory": 33554432,
+        "capacity": 16757248,
+        "used": 2834896,
+        "available": 13922352
+      },
+      "old_space": {
+        "memorySize": 2034380800,
+        "committedMemory": 2034380800,
+        "capacity": 1895492520,
+        "used": 1893036032,
+        "available": 2456488
+      },
+      "code_space": {
+        "memorySize": 3047424,
+        "committedMemory": 3047424,
+        "capacity": 2629344,
+        "used": 2629344,
+        "available": 0
+      },
+      "map_space": {
+        "memorySize": 6819840,
+        "committedMemory": 6819840,
+        "capacity": 4277600,
+        "used": 4277600,
+        "available": 0
+      },
+      "large_object_space": {
+        "memorySize": 95784960,
+        "committedMemory": 95784960,
+        "capacity": 95562248,
+        "used": 95562248,
+        "available": 0
+      },
+      "code_large_object_space": {
+        "memorySize": 954368,
+        "committedMemory": 954368,
+        "capacity": 867424,
+        "used": 867424,
+        "available": 0
+      },
+      "new_large_object_space": {
+        "memorySize": 0,
+        "committedMemory": 0,
+        "capacity": 16757248,
+        "used": 0,
+        "available": 16757248
+      }
+    }
+  },
+  "resourceUsage": {
+    "userCpuSeconds": 188.718,
+    "kernelCpuSeconds": 174.421,
+    "cpuConsumptionPercent": 24.6865,
+    "maxRss": 2722942976,
+    "pageFaults": {
+      "IORequired": 1633964,
+      "IONotRequired": 0
+    },
+    "fsActivity": {
+      "reads": 13382,
+      "writes": 244
+    }
+  },
+  "libuv": [
+  ],
+  "environmentVariables": {
+    "=C:": "C:\\Users\\Sge\\Desktop\\Dev-2020\\first-complete-website",
+    "ALLUSERSPROFILE": "C:\\ProgramData",
+    "APPDATA": "C:\\Users\\Sge\\AppData\\Roaming",
+    "asl.log=Destination": "file",
+    "ChocolateyInstall": "C:\\ProgramData\\chocolatey",
+    "ChocolateyLastPathUpdate": "132071779893422163",
+    "CommonProgramFiles": "C:\\Program Files\\Common Files",
+    "CommonProgramFiles(x86)": "C:\\Program Files (x86)\\Common Files",
+    "CommonProgramW6432": "C:\\Program Files\\Common Files",
+    "COMPUTERNAME": "DESKTOP-UJNMCUK",
+    "ComSpec": "C:\\WINDOWS\\system32\\cmd.exe",
+    "DriverData": "C:\\Windows\\System32\\Drivers\\DriverData",
+    "GATSBY_BUILD_STAGE": "develop",
+    "gatsby_executing_command": "develop",
+    "GATSBY_LOGGER": "ink",
+    "gatsby_log_level": "normal",
+    "HOME": "C:\\Users\\Sge",
+    "HOMEDRIVE": "C:",
+    "HOMEPATH": "\\Users\\Sge",
+    "LOCALAPPDATA": "C:\\Users\\Sge\\AppData\\Local",
+    "LOGONSERVER": "\\\\DESKTOP-UJNMCUK",
+    "NODE_ENV": "development",
+    "NUMBER_OF_PROCESSORS": "4",
+    "OneDrive": "C:\\Users\\Sge\\OneDrive",
+    "OneDriveConsumer": "C:\\Users\\Sge\\OneDrive",
+    "OS": "Windows_NT",
+    "Path": "C:\\Python27\\;C:\\Python27\\Scripts;C:\\Program Files (x86)\\NVIDIA Corporation\\PhysX\\Common;C:\\Program Files (x86)\\Razer Chroma SDK\\bin;C:\\Program Files\\Razer Chroma SDK\\bin;C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;C:\\WINDOWS\\system32;C:\\WINDOWS;C:\\WINDOWS\\System32\\Wbem;C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\;C:\\Program Files (x86)\\AMD\\ATI.ACE\\Core-Static;C:\\WINDOWS\\System32\\OpenSSH\\;C:\\Program Files\\Git\\cmd;C:\\Program Files\\nodejs\\;C:\\ProgramData\\chocolatey\\bin;C:\\Program Files\\dotnet\\;C:\\Program Files\\Microsoft SQL Server\\130\\Tools\\Binn\\;C:\\Users\\Sge\\AppData\\Local\\Programs\\Python\\Python38-32\\Scripts\\;C:\\Users\\Sge\\AppData\\Local\\Programs\\Python\\Python38-32\\;C:\\Users\\Sge\\AppData\\Local\\Microsoft\\WindowsApps;C:\\Users\\Sge\\AppData\\Local\\atom\\bin;C:\\Users\\Sge\\AppData\\Local\\Microsoft\\WindowsApps;C:\\Users\\Sge\\AppData\\Local\\Programs\\Microsoft VS Code\\bin;C:\\Users\\Sge\\AppData\\Roaming\\npm",
+    "PATHEXT": ".COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JSE;.WSF;.WSH;.MSC;.CPL",
+    "PROCESSOR_ARCHITECTURE": "AMD64",
+    "PROCESSOR_IDENTIFIER": "Intel64 Family 6 Model 60 Stepping 3, GenuineIntel",
+    "PROCESSOR_LEVEL": "6",
+    "PROCESSOR_REVISION": "3c03",
+    "ProgramData": "C:\\ProgramData",
+    "ProgramFiles": "C:\\Program Files",
+    "ProgramFiles(x86)": "C:\\Program Files (x86)",
+    "ProgramW6432": "C:\\Program Files",
+    "PROMPT": "$P$G",
+    "PSModulePath": "C:\\Users\\Sge\\Documents\\WindowsPowerShell\\Modules;C:\\Program Files\\WindowsPowerShell\\Modules;C:\\WINDOWS\\system32\\WindowsPowerShell\\v1.0\\Modules\\",
+    "PUBLIC": "C:\\Users\\Public",
+    "SystemDrive": "C:",
+    "SystemRoot": "C:\\WINDOWS",
+    "TEMP": "C:\\Users\\Sge\\AppData\\Local\\Temp",
+    "TMP": "C:\\Users\\Sge\\AppData\\Local\\Temp",
+    "USERDOMAIN": "DESKTOP-UJNMCUK",
+    "USERDOMAIN_ROAMINGPROFILE": "DESKTOP-UJNMCUK",
+    "USERNAME": "Sage",
+    "USERPROFILE": "C:\\Users\\Sge",
+    "VBOX_MSI_INSTALL_PATH": "C:\\Program Files\\Oracle\\VirtualBox\\",
+    "VIPSHOME": "\\\\?\\C:\\Users\\Sge\\Desktop\\Dev-2020\\first-complete-website\\node_modules\\sharp\\build\\Release",
+    "windir": "C:\\WINDOWS",
+    "TERM_PROGRAM": "vscode",
+    "TERM_PROGRAM_VERSION": "1.44.0",
+    "LANG": "en_US.UTF-8",
+    "COLORTERM": "truecolor"
+  },
+  "sharedObjects": [
+    "C:\\Program Files\\nodejs\\node.exe",
+    "C:\\WINDOWS\\SYSTEM32\\ntdll.dll",
+    "C:\\WINDOWS\\System32\\KERNEL32.DLL",
+    "C:\\WINDOWS\\System32\\KERNELBASE.dll",
+    "C:\\WINDOWS\\System32\\WS2_32.dll",
+    "C:\\WINDOWS\\System32\\RPCRT4.dll",
+    "C:\\WINDOWS\\SYSTEM32\\dbghelp.dll",
+    "C:\\WINDOWS\\System32\\ADVAPI32.dll",
+    "C:\\WINDOWS\\System32\\ucrtbase.dll",
+    "C:\\WINDOWS\\System32\\msvcrt.dll",
+    "C:\\WINDOWS\\System32\\sechost.dll",
+    "C:\\WINDOWS\\System32\\USER32.dll",
+    "C:\\WINDOWS\\System32\\win32u.dll",
+    "C:\\WINDOWS\\System32\\GDI32.dll",
+    "C:\\WINDOWS\\System32\\gdi32full.dll",
+    "C:\\WINDOWS\\System32\\msvcp_win.dll",
+    "C:\\WINDOWS\\System32\\PSAPI.DLL",
+    "C:\\WINDOWS\\System32\\CRYPT32.dll",
+    "C:\\WINDOWS\\System32\\MSASN1.dll",
+    "C:\\WINDOWS\\System32\\bcrypt.dll",
+    "C:\\WINDOWS\\SYSTEM32\\IPHLPAPI.DLL",
+    "C:\\WINDOWS\\SYSTEM32\\USERENV.dll",
+    "C:\\WINDOWS\\System32\\profapi.dll",
+    "C:\\WINDOWS\\SYSTEM32\\WINMM.dll",
+    "C:\\WINDOWS\\SYSTEM32\\WINMMBASE.dll",
+    "C:\\WINDOWS\\System32\\cfgmgr32.dll",
+    "C:\\WINDOWS\\System32\\bcryptPrimitives.dll",
+    "C:\\WINDOWS\\System32\\IMM32.DLL",
+    "C:\\WINDOWS\\System32\\powrprof.dll",
+    "C:\\WINDOWS\\System32\\UMPDC.dll",
+    "C:\\WINDOWS\\system32\\uxtheme.dll",
+    "C:\\WINDOWS\\System32\\combase.dll",
+    "C:\\WINDOWS\\system32\\mswsock.dll",
+    "C:\\WINDOWS\\System32\\kernel.appcore.dll",
+    "C:\\WINDOWS\\SYSTEM32\\CRYPTBASE.DLL",
+    "C:\\WINDOWS\\System32\\NSI.dll",
+    "C:\\WINDOWS\\SYSTEM32\\dhcpcsvc6.DLL",
+    "C:\\WINDOWS\\SYSTEM32\\dhcpcsvc.DLL",
+    "C:\\WINDOWS\\SYSTEM32\\DNSAPI.dll",
+    "C:\\WINDOWS\\system32\\napinsp.dll",
+    "C:\\WINDOWS\\system32\\pnrpnsp.dll",
+    "C:\\WINDOWS\\System32\\winrnr.dll",
+    "C:\\WINDOWS\\system32\\NLAapi.dll",
+    "C:\\WINDOWS\\system32\\wshbth.dll",
+    "C:\\Windows\\System32\\rasadhlp.dll",
+    "C:\\WINDOWS\\System32\\fwpuclnt.dll",
+    "\\\\?\\C:\\Users\\Sge\\Desktop\\Dev-2020\\first-complete-website\\node_modules\\sharp\\build\\Release\\sharp.node",
+    "\\\\?\\C:\\Users\\Sge\\Desktop\\Dev-2020\\first-complete-website\\node_modules\\sharp\\build\\Release\\libvips-cpp.dll",
+    "\\\\?\\C:\\Users\\Sge\\Desktop\\Dev-2020\\first-complete-website\\node_modules\\sharp\\build\\Release\\libglib-2.0-0.dll",
+    "\\\\?\\C:\\Users\\Sge\\Desktop\\Dev-2020\\first-complete-website\\node_modules\\sharp\\build\\Release\\libvips-42.dll",
+    "\\\\?\\C:\\Users\\Sge\\Desktop\\Dev-2020\\first-complete-website\\node_modules\\sharp\\build\\Release\\libgobject-2.0-0.dll",
+    "C:\\WINDOWS\\System32\\ole32.dll",
+    "C:\\WINDOWS\\System32\\SHELL32.dll",
+    "C:\\WINDOWS\\System32\\shcore.dll",
+    "C:\\WINDOWS\\System32\\windows.storage.dll",
+    "C:\\WINDOWS\\System32\\shlwapi.dll",
+    "C:\\WINDOWS\\System32\\cryptsp.dll",
+    "\\\\?\\C:\\Users\\Sge\\Desktop\\Dev-2020\\first-complete-website\\node_modules\\sharp\\build\\Release\\libintl.dll",
+    "\\\\?\\C:\\Users\\Sge\\Desktop\\Dev-2020\\first-complete-website\\node_modules\\sharp\\build\\Release\\libffi-6.dll",
+    "\\\\?\\C:\\Users\\Sge\\Desktop\\Dev-2020\\first-complete-website\\node_modules\\sharp\\build\\Release\\libexif-12.dll",
+    "\\\\?\\C:\\Users\\Sge\\Desktop\\Dev-2020\\first-complete-website\\node_modules\\sharp\\build\\Release\\libexpat-1.dll",
+    "\\\\?\\C:\\Users\\Sge\\Desktop\\Dev-2020\\first-complete-website\\node_modules\\sharp\\build\\Release\\libcairo-2.dll",
+    "\\\\?\\C:\\Users\\Sge\\Desktop\\Dev-2020\\first-complete-website\\node_modules\\sharp\\build\\Release\\libgmodule-2.0-0.dll",
+    "\\\\?\\C:\\Users\\Sge\\Desktop\\Dev-2020\\first-complete-website\\node_modules\\sharp\\build\\Release\\libfontconfig-1.dll",
+    "\\\\?\\C:\\Users\\Sge\\Desktop\\Dev-2020\\first-complete-website\\node_modules\\sharp\\build\\Release\\libgif-7.dll",
+    "\\\\?\\C:\\Users\\Sge\\Desktop\\Dev-2020\\first-complete-website\\node_modules\\sharp\\build\\Release\\libgsf-1-114.dll",
+    "\\\\?\\C:\\Users\\Sge\\Desktop\\Dev-2020\\first-complete-website\\node_modules\\sharp\\build\\Release\\libjpeg-62.dll",
+    "\\\\?\\C:\\Users\\Sge\\Desktop\\Dev-2020\\first-complete-website\\node_modules\\sharp\\build\\Release\\liblcms2-2.dll",
+    "\\\\?\\C:\\Users\\Sge\\Desktop\\Dev-2020\\first-complete-website\\node_modules\\sharp\\build\\Release\\liborc-0.4-0.dll",
+    "\\\\?\\C:\\Users\\Sge\\Desktop\\Dev-2020\\first-complete-website\\node_modules\\sharp\\build\\Release\\libpango-1.0-0.dll",
+    "\\\\?\\C:\\Users\\Sge\\Desktop\\Dev-2020\\first-complete-website\\node_modules\\sharp\\build\\Release\\libpng16-16.dll",
+    "\\\\?\\C:\\Users\\Sge\\Desktop\\Dev-2020\\first-complete-website\\node_modules\\sharp\\build\\Release\\libtiff-5.dll",
+    "\\\\?\\C:\\Users\\Sge\\Desktop\\Dev-2020\\first-complete-website\\node_modules\\sharp\\build\\Release\\libpangoft2-1.0-0.dll",
+    "\\\\?\\C:\\Users\\Sge\\Desktop\\Dev-2020\\first-complete-website\\node_modules\\sharp\\build\\Release\\librsvg-2-2.dll",
+    "\\\\?\\C:\\Users\\Sge\\Desktop\\Dev-2020\\first-complete-website\\node_modules\\sharp\\build\\Release\\libwebp-7.dll",
+    "\\\\?\\C:\\Users\\Sge\\Desktop\\Dev-2020\\first-complete-website\\node_modules\\sharp\\build\\Release\\libwebpdemux-2.dll",
+    "\\\\?\\C:\\Users\\Sge\\Desktop\\Dev-2020\\first-complete-website\\node_modules\\sharp\\build\\Release\\libwebpmux-3.dll",
+    "\\\\?\\C:\\Users\\Sge\\Desktop\\Dev-2020\\first-complete-website\\node_modules\\sharp\\build\\Release\\libz1.dll",
+    "\\\\?\\C:\\Users\\Sge\\Desktop\\Dev-2020\\first-complete-website\\node_modules\\sharp\\build\\Release\\libfreetype-6.dll",
+    "\\\\?\\C:\\Users\\Sge\\Desktop\\Dev-2020\\first-complete-website\\node_modules\\sharp\\build\\Release\\libpixman-1-0.dll",
+    "\\\\?\\C:\\Users\\Sge\\Desktop\\Dev-2020\\first-complete-website\\node_modules\\sharp\\build\\Release\\libgcc_s_seh-1.dll",
+    "C:\\WINDOWS\\SYSTEM32\\MSIMG32.dll",
+    "\\\\?\\C:\\Users\\Sge\\Desktop\\Dev-2020\\first-complete-website\\node_modules\\sharp\\build\\Release\\libgio-2.0-0.dll",
+    "\\\\?\\C:\\Users\\Sge\\Desktop\\Dev-2020\\first-complete-website\\node_modules\\sharp\\build\\Release\\libxml2-2.dll",
+    "\\\\?\\C:\\Users\\Sge\\Desktop\\Dev-2020\\first-complete-website\\node_modules\\sharp\\build\\Release\\libfribidi-0.dll",
+    "\\\\?\\C:\\Users\\Sge\\Desktop\\Dev-2020\\first-complete-website\\node_modules\\sharp\\build\\Release\\libcroco-0.6-3.dll",
+    "\\\\?\\C:\\Users\\Sge\\Desktop\\Dev-2020\\first-complete-website\\node_modules\\sharp\\build\\Release\\libgdk_pixbuf-2.0-0.dll",
+    "\\\\?\\C:\\Users\\Sge\\Desktop\\Dev-2020\\first-complete-website\\node_modules\\sharp\\build\\Release\\libpangocairo-1.0-0.dll",
+    "\\\\?\\C:\\Users\\Sge\\Desktop\\Dev-2020\\first-complete-website\\node_modules\\sharp\\build\\Release\\libiconv-2.dll",
+    "\\\\?\\C:\\Users\\Sge\\Desktop\\Dev-2020\\first-complete-website\\node_modules\\sharp\\build\\Release\\libpangowin32-1.0-0.dll",
+    "\\\\?\\C:\\Users\\Sge\\Desktop\\Dev-2020\\first-complete-website\\node_modules\\sharp\\build\\Release\\libharfbuzz.dll",
+    "C:\\WINDOWS\\SYSTEM32\\USP10.dll",
+    "C:\\WINDOWS\\SYSTEM32\\ntmarta.dll",
+    "C:\\WINDOWS\\system32\\rsaenh.dll"
+  ]
+}

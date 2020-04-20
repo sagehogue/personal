@@ -9,6 +9,7 @@ import ContactForm from "../../ContactForm/ContactForm"
 import { FaWrench } from "react-icons/fa"
 import { FaEnvelope } from "react-icons/fa"
 import { FaHome } from "react-icons/fa"
+import { FaPalette } from "react-icons/fa"
 
 const Navigation = styled.nav`
   box-sizing: content-box;
@@ -57,6 +58,9 @@ const NavBar = function() {
       </StyledLink>
       <StyledLink to="/contact">
         <FaEnvelope />
+      </StyledLink>
+      <StyledLink to="/canvas">
+        <FaPalette />
       </StyledLink>
     </Navigation>
   )

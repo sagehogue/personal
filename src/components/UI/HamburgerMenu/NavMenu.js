@@ -9,6 +9,7 @@ import Backdrop from "../Backdrop/Backdrop"
 import { FaWrench } from "react-icons/fa"
 import { FaEnvelope } from "react-icons/fa"
 import { FaHome } from "react-icons/fa"
+import { FaPalette } from "react-icons/fa"
 
 // Should refactor to use styled components rather than this css file.
 import classes from "./NavMenu.module.css"
@@ -86,6 +87,13 @@ class NavMenu extends Component {
             <NavLink>
               <TrayItem clickHandler={this.handlePageChange}>
                 <FaEnvelope />
+              </TrayItem>
+            </NavLink>
+          </Link>
+          <Link to="/canvas" activeClassName={classes.active}>
+            <NavLink>
+              <TrayItem clickHandler={this.handlePageChange}>
+                <FaPalette />
               </TrayItem>
             </NavLink>
           </Link>
