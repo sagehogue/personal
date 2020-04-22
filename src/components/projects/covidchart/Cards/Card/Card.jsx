@@ -52,6 +52,8 @@ const CardStyle = styled.div`
   & .front h3,
   & .back h4 {
     margin-top: 1.25rem;
+    color: ${colors.darkText}
+
   }
   & .front h3 {
     font-size: 1.5rem;

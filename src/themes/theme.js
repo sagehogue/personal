@@ -2,11 +2,15 @@ import React from "react"
 import styled from "styled-components"
 
 export let colors = {
+  lilac: "#BD93BD",
   offwhite: "#FCFCFC",
   skyblue: "#B2DBFF",
   brightblue: "#47A1EF",
   deepblue: "#0675D6",
   darkblue: "#26547C",
+  taupe: "#925E78",
+  darkText: "#444444",
+  aquamarine: "#7FEFBD",
 }
 
 const Theme = styled.div`

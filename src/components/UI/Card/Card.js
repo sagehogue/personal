@@ -29,6 +29,11 @@ const CardStyle = styled.div`
   width: 21.5vw;
   svg {
     font-size: 4rem;
+    color: ${colors.lilac};
+  }
+  & h3,
+  & p {
+    color: ${colors.darkText};
   }
   &.flip {
     --rotate-y: 180deg;

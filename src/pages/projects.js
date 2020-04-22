@@ -46,6 +46,14 @@ const Header = styled.header`
   }
 `
 
+const SecondProject = styled.section`
+  display: flex;
+  justify-content: space-around;
+  height: 50vh;
+  background-color: ${colors.deepblue};
+  margin: auto;
+`
+
 const ProjectGrid = styled.main`
   display: flex;
   justify-content: space-around;
@@ -64,8 +72,9 @@ const projects = () => {
               Here I've catalogued <br />
               the knick-knacks I've made along the way.
             </h2>
-            <h3>Click a card icon to open a project.</h3>
           </Header>
+          <CovidChart />
+          <SecondProject />
           <ProjectGrid>
             <Card
               icon={
@@ -103,7 +112,6 @@ const projects = () => {
               description={`No storage socket.io application`}
             />
           </ProjectGrid>
-          <CovidChart />
         </Theme>
       </Layout>
       <GlobalStyles />

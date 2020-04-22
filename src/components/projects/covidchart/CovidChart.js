@@ -9,7 +9,7 @@ import CountryPicker from "./CountryPicker/CountryPicker"
 import getData from "./api"
 
 const Container = styled.section`
-  background-color: ${colors.deepblue};
+  background-color: ${colors.offwhite};
   display: flex;
   align-items: center;
   justify-content: center;
@@ -19,15 +19,24 @@ const Container = styled.section`
 const Title = styled.h2`
   margin-top: 2rem;
   font-size: 2.5rem;
-  color: ${colors.offwhite};
+  color: ${colors.darkText};
 `
 
 class CovidChart extends Component {
   state = {
     data: {},
+    country: "",
   }
   componentDidMount() {
     this.retrieveData()
+  }
+
+  handleCountryChange = async country => {
+    // Set the data
+    // Set the state
+    const countryData = await getData(country)
+    console.log(countryData)
+    this.setState({ data: countryData, country: country })
   }
 
   retrieveData = async () => {
@@ -36,14 +45,14 @@ class CovidChart extends Component {
     this.setState({ data: data })
   }
   render() {
-    const { data } = this.state
+    const { data, country } = this.state
     return (
       <Container>
         <Title>Covid-19 Tracker</Title>
         <Cards data={data} />
         <br />
-        <CountryPicker />
-        <Chart />
+        <CountryPicker handleCountryChange={this.handleCountryChange} />
+        <Chart data={data} country={country} />
       </Container>
     )
   }

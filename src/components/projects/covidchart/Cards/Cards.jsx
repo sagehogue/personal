@@ -18,7 +18,7 @@ const StyledCards = styled.div`
 
 const StyledHeading = styled.h2`
   margin-top: 2.5rem;
-  color: ${colors.offwhite};
+  color: ${colors.darkText};
   font-size: 2rem;
 `
 
