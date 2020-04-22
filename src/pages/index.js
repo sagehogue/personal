@@ -368,16 +368,17 @@ const IndexPage = () => {
                 <Card
                   icon={<FaPaintBrush />}
                   title={"Designer"}
-                  description={`Each design I make consists of two things: scratch and creative energy. 
-                  Every product I deliver does one thing: stand out.`}
+                  description={`I value minimalism, geometry, and color in my designs. Each unique project has its own lessons to teach.`}
+                  listTitle={"Check out my art"}
+                  listItems={["Art1", "Art2", "Art3", "Art4", "Art5"]}
                 ></Card>
               </div>
               <div>
                 <Card
                   icon={<FaRegKeyboard />}
                   title={"Web Developer"}
-                  description={`Always learning new ways to use my skills, I love to see my creations take form on screen. Tinker every day.`}
-                  listTitle={"My tools:"}
+                  description={`I use the most effective modern technology to create performant and elegant web solutions for businesses and individuals. Whether you need a personal professional portfolio, an online business presence, an ecommerce solution or anything else we can work together to create a solution.`}
+                  listTitle={"My tools"}
                   listItems={[
                     "HTML5",
                     "CSS3",
@@ -392,7 +393,12 @@ const IndexPage = () => {
                 <Card
                   icon={<FaBook />}
                   title={"Mentor"}
-                  description={`Coding is best done with others! That has been my experience and so I try my best to pay it`}
+                  description={`I've always found programming gets done best when it is a collaborative effort. A lot of people helped me learn and so I've always had the mindset to want to pay it forward.`}
+                  listTitle={"Experiences"}
+                  listItems={[
+                    "Teacher's Assistant in Intro to Python at PDX Code Guild - April 2018",
+                    "1 on 1 tutoring in HTML/CSS/JavaScript, React - 6 months",
+                  ]}
                 ></Card>
               </div>
             </SkillsSection>

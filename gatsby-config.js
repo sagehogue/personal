@@ -1,8 +1,8 @@
 module.exports = {
   siteMetadata: {
-    title: `Gatsby Default Starter`,
-    description: `Kick off your next, great Gatsby project with this default starter. This barebones starter ships with the main Gatsby configuration files you might need.`,
-    author: `@gatsbyjs`,
+    title: `webSage`,
+    description: `Kick off your next great business decision with a custom online presence!`,
+    author: `@sagehogue`,
   },
   plugins: [
     {
@@ -22,6 +22,10 @@ module.exports = {
             variants: ["400", "700"],
           },
           { family: "Montserrat", variants: ["400", "500", "700"] },
+          { family: "Monoton", variants: [`400`] },
+          { family: "Press Start 2P", variants: [`400`] },
+          { family: "Bungee Inline", variants: [`400`] },
+          { family: "Megrim", variants: [`400`] },
         ],
       },
     },

@@ -23,10 +23,11 @@ const CardStyle = styled.div`
   margin-top: 1rem;
   font-size: 1.5rem;
   text-align: center;
-  min-height: 30rem;
+  min-height: 40rem;
   border-radius: 0.8rem;
   background-color: ${colors.offwhite};
   width: 21.5vw;
+  line-height: 2.2rem;
   svg {
     font-size: 4rem;
     color: ${colors.lilac};
@@ -62,9 +63,9 @@ const CardStyle = styled.div`
   }
   br {
     margin: 0.5rem auto 1rem auto;
-    max-width: 75%;
   }
   & .back {
+    position: relative;
     transform: rotateY(180deg);
   }
   & .back ul {
@@ -72,7 +73,20 @@ const CardStyle = styled.div`
     list-style: none;
   }
   & .back-wrapper {
-    margin-top: 7.5rem;
+    position: absolute;
+    top: 12.5%;
+    left: 7.5%;
+    width: 85%;
+    height: 75%;
+    & ul {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-around;
+      height: 85%;
+    }
+  }
+  & .back-wrapper .constrain:first-of-type {
+    // max-height: 0;
   }
   .constrain {
     max-width: 90%;
@@ -92,31 +106,25 @@ const Card = props => {
         {props.icon}
         <div className="constrain">
           <h3>{props.title}</h3>
-        </div>
-        <VisibleBR />
-        <div className="constrain">
+          <VisibleBR />
           <p>{props.description}</p>
         </div>
       </div>
       <div className="back">
         <div className={"back-wrapper"}>
-          <div className="constrain">
-            <h4>{props.listTitle}</h4>
-          </div>
+          <h4>{props.listTitle}</h4>
           <VisibleBR />
-          <div className="constrain">
-            <ul>
-              {props.listItems
-                ? props.listItems.map((option, i) => {
-                    return (
-                      <li key={i} className="card-item">
-                        {option}
-                      </li>
-                    )
-                  })
-                : null}
-            </ul>
-          </div>
+          <ul>
+            {props.listItems
+              ? props.listItems.map((option, i) => {
+                  return (
+                    <li key={i} className="card-item">
+                      {option}
+                    </li>
+                  )
+                })
+              : null}
+          </ul>
         </div>
       </div>
     </CardStyle>

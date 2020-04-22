@@ -5,6 +5,7 @@ import NavButton from "./NavButton/NavButton"
 import NavTray from "./NavTray/NavTray"
 import TrayItem from "./NavTray/TrayItem/TrayItem"
 import Backdrop from "../Backdrop/Backdrop"
+import Logo from "../Logo/Logo"
 
 import { FaWrench } from "react-icons/fa"
 import { FaEnvelope } from "react-icons/fa"
@@ -62,6 +63,7 @@ class NavMenu extends Component {
   render() {
     return (
       <div className={classes.NavMenu}>
+        <Logo />
         <NavButton
           menuClosed={this.state.menuIsClosed}
           toggleMenuHandler={this.toggleMenu}

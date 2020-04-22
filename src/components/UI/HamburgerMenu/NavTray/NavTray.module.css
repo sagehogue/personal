@@ -1,6 +1,9 @@
 .NavTray {
+  position: absolute;
+  top: 0;
+  left: 0;
   transition: all 0.5s;
-  background-color: transparent;
+  background-color: #f7f7f7;
   border: solid medium rgba(245, 255, 250, 0.84);
   border-top: none;
   display: flex;
@@ -10,7 +13,7 @@
   align-items: center;
   z-index: 50;
   margin-right: auto;
-  max-height: 15vh;
+  height: 15vh;
 }
 
 .NavTray a,

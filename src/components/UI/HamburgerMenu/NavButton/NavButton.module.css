@@ -8,7 +8,7 @@
 }
 
 .NavButton div {
-  background-color: #47A1EF;
+  background-color: #47a1ef;
   transition: all 0.4s;
   width: 4rem;
   height: 0.8rem;
@@ -61,7 +61,11 @@
   .NavButton div {
     width: 23vw;
     height: 0.75rem;
-    margin: 0.5rem 0.75rem 0.5rem 0;
+    max-width: 25%;
+  }
+
+  .NavButton {
+    margin: auto;
   }
 
   .NavButton .top {
@@ -69,8 +73,6 @@
   }
 
   .xButton {
-    overflow: hidden;
-    width: 23vw;
     z-index: 50;
     display: flex;
     flex-direction: column;
@@ -83,8 +85,6 @@
     background-color: red;
     transition: all 0.7s;
     height: 0.8rem;
-    width: 23vw;
-    margin: 0.5rem 0.75rem 0.5rem 0.75rem;
   }
 
   .xButton .middle {

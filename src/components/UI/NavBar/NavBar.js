@@ -4,7 +4,7 @@ import styled from "styled-components"
 
 import { colors } from "../../../themes/theme"
 
-import ContactForm from "../../ContactForm/ContactForm"
+import Logo from "../Logo/Logo"
 
 import { FaWrench } from "react-icons/fa"
 import { FaEnvelope } from "react-icons/fa"
@@ -19,8 +19,11 @@ const Navigation = styled.nav`
   justify-content: flex-end;
   margin: 0;
   background-color: ${colors.offwhite};
+  & a {
+    height: 50%;
+    margin: auto 0;
+  }
 `
-const activeClass = "active"
 const StyledLink = styled(props => (
   <Link activeClassName={activeClass} {...props} />
 ))`
@@ -47,6 +50,8 @@ const StyledLink = styled(props => (
     color: orange;
   }
 `
+const activeClass = "active"
+
 const NavBar = function() {
   return (
     <Navigation>

@@ -3,22 +3,30 @@ import React from "react"
 
 import NavBar from "./UI/NavBar/NavBar.js"
 import Hamburger from "./UI/HamburgerMenu/NavMenu"
+import Logo from "./UI/Logo/Logo"
 
 import { colors } from "../themes/theme"
 
 const StyledHeader = styled.header`
+  display: flex;
+  flex-direction: row;
   background-color: ${colors.offwhite};
-  padding-top: 1.5rem;
-  padding-bottom: 1.5rem;
   color: ${colors.skyblue};
+  max-height: 10vh;
+  max-width: 85%;
+  margin: auto;
+  overflow: hidden;
 `
 
 const Mobile = () => <Hamburger />
 
 const Desktop = () => (
-  <StyledHeader>
-    <NavBar />
-  </StyledHeader>
+  <>
+    <StyledHeader>
+      <Logo />
+      <NavBar />
+    </StyledHeader>
+  </>
 )
 const Header = () => {
   return typeof window !== "undefined" ? (

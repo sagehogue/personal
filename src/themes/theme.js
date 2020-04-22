@@ -13,6 +13,13 @@ export let colors = {
   aquamarine: "#7FEFBD",
 }
 
+export const fonts = {
+  logoFont1: `'Monoton', cursive`,
+  logoFont2: `'Bungee Inline', cursive`,
+  gameFont: `'Press Start 2P', cursive`,
+  glyph: `'Megrim', cursive`,
+}
+
 const Theme = styled.div`
   margin: 0 auto;
   font-family: Montserrat, arial;

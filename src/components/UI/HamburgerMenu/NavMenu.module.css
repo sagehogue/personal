@@ -4,19 +4,23 @@
   --nav-link-col: lightblue;
   --tray-item-color: #f5fffad7;
 }
-
+/* Container Styling */
 .NavMenu {
   overflow: hidden;
-  grid-column: 1 / 12;
-  grid-row: 1 / 2;
   width: 100%;
-  max-width: 100%;
+  max-width: 95%;
+  margin: auto;
   height: 15vh;
   display: flex;
-  flex-direction: row-reverse;
-  justify-content: space-between;
+  flex-direction: row;
+  justify-content: space-around;
 }
-
+/* Logo Customization */
+.NavMenu span {
+  align-self: middle;
+  justify-self: flex-start;
+}
+/* Desktop Styling - never used in this app */
 .DesktopMenu {
   display: flex;
   flex-direction: row;
