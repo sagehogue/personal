@@ -14,7 +14,7 @@ const StyledLogo = styled.span`
 `
 
 const Logo = () => {
-  return <StyledLogo>webSage</StyledLogo>
+  return <StyledLogo>SMPH</StyledLogo>
 }
 
 export default Logo

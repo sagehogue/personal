@@ -19,7 +19,7 @@ const Header = styled.header`
   flex-direction: column;
   width: 100vw;
   justify-content: space-around;
-  height: 50vh;
+  height: 75vh;
   background-color: ${colors.deepblue};
   & h2,
   & h3 {
@@ -28,7 +28,8 @@ const Header = styled.header`
     transform: translateY(-3rem);
   }
 
-  & h2 {
+  & h2,
+  & p {
     padding-top: 1.75rem;
     color: ${colors.offwhite};
     font-size: 2rem;
@@ -44,12 +45,30 @@ const Header = styled.header`
     font-size: 1.5rem;
     width: 85vw;
   }
+
+  & p {
+    text-align: right;
+    margin: 0 auto;
+    & ul {
+      list-style: none;
+      margin: 0;
+      text-align: center;
+      & li {
+        margin: 0;
+        padding: 0;
+      }
+    }
+    & ul,
+    & li {
+      display: inline-block;
+    }
+  }
 `
 
 const SecondProject = styled.section`
   display: flex;
   justify-content: space-around;
-  height: 50vh;
+  height: 75vh;
   background-color: ${colors.deepblue};
   margin: auto;
 `
@@ -62,6 +81,10 @@ const ProjectGrid = styled.main`
   transform: translateY(-5rem);
 `
 
+const TranslateY = styled.div`
+  transform: translateY(-3vh);
+`
+
 const projects = () => {
   return (
     <>
@@ -72,8 +95,17 @@ const projects = () => {
               Here I've catalogued <br />
               the knick-knacks I've made along the way.
             </h2>
+            <p>
+              <ul>
+                Examples inlcude: <br /> <li>sweet dynamic web apps,</li>
+                <br /> <li>math inspired art, beautiful websites,</li> <br />
+                <li>and the products of my various tech undertakings.</li>
+              </ul>
+            </p>
           </Header>
-          <CovidChart />
+          <TranslateY>
+            <CovidChart />
+          </TranslateY>
           <SecondProject />
           <ProjectGrid>
             <Card

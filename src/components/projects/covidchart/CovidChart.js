@@ -9,7 +9,7 @@ import CountryPicker from "./CountryPicker/CountryPicker"
 import getData from "./api"
 
 const Container = styled.section`
-  background-color: ${colors.offwhite};
+  // background-color: ${colors.offwhite};
   display: flex;
   align-items: center;
   justify-content: center;

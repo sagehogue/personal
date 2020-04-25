@@ -10,7 +10,7 @@ import Card from "../components/UI/Card/Card"
 import GlobalStyles from "../themes/globals"
 
 import Theme from "../themes/theme"
-import { colors } from "../themes/theme"
+import { colors, fonts } from "../themes/theme"
 
 import { FaRegKeyboard } from "react-icons/fa"
 import { FaPaintBrush } from "react-icons/fa"
@@ -38,29 +38,24 @@ const Hero = styled.section`
   padding-bottom: 2rem;
   // Unsure about this padding - get input
   padding-top: 2rem;
-  height: 90vh;
+  height: 75vh;
   & .animate {
     animation-fill-mode: forwards;
   }
   & .gatsby-image-wrapper:first-of-type {
-    grid-row: 1 / 2;
-    grid-column: 2 / 6;
+    grid-row: 1 / 3;
+    grid-column: 3 / 6;
   }
   & .gatsby-image-wrapper:nth-of-type(2) {
     grid-row: 2 / 4;
     grid-column: 1 / 3;
   }
-  & .gatsby-image-wrapper:nth-of-type(3) {
-    grid-row: 2 / 4;
-    grid-column: 2 / 3;
-  }
-  & .gatsby-image-wrapper:last-of-type {
-    grid-column: 3 / 6;
-    grid-row: 2 / 3;
-  }
 
   @media screen and (max-width: 550px) {
     gap: 0.75rem;
+  }
+  & .monoton {
+    font-family: ${fonts.logoFont1};
   }
 
   @media screen and (max-width: 400px) {
@@ -139,9 +134,9 @@ const thirdAnimation = keyframes`
 const Greeting = styled.h1`
   overflow: hidden;
   grid-row: 1 / 2;
-  grid-column: 1 / 2;
+  grid-column: 1 / 3;
   margin: auto;
-  font-size: 4rem;
+  font-size: 3rem;
   color: ${colors.offwhite};
     -1px -1px 0 #000;
   text-align: center;
@@ -161,7 +156,7 @@ const Greeting = styled.h1`
 
   @media screen and (max-width: 1800px) {
     line-height: 4.5rem;
-    font-size: 3.5rem;
+    font-size: 3rem;
   }
   @media screen and (max-width: 2000px) and (max-height: 1100px) {
     line-height: 4rem;
@@ -198,10 +193,10 @@ const Intro = styled.h2`
   grid-row: 3 / 4;
   grid-column: 3 / 6;
   margin: 0;
-  font-size: 3rem;
+  font-size: 2.75rem;
   color: ${colors.offwhite};
   text-align: center;
-  line-height: 3.5rem;
+  line-height: 3rem;
   margin: auto;
   max-height: 100%;
   max-width: 100%;
@@ -231,7 +226,7 @@ const Intro = styled.h2`
 const AboutSection = styled.section`
   max-width: 85%;
   margin: auto;
-  height: 90vh;
+  height: 75vh;
   text-align: center;
   background-color: inherit;
   font-size: 2rem;
@@ -322,9 +317,7 @@ const IndexPage = () => {
                 <FirstToAppear className={"animate first"}>Hi,</FirstToAppear>
                 <br />
                 <SecondToAppear className={"animate second"}>
-                  I'm
-                  <br />
-                  Sage{" "}
+                  I'm Sage{" "}
                 </SecondToAppear>
               </Greeting>
               <Img
@@ -332,10 +325,10 @@ const IndexPage = () => {
                 fluid={data.portland.childImageSharp.fluid}
               />
               <Img key={data.code.id} fluid={data.code.childImageSharp.fluid} />
-              <Img
+              {/* <Img
                 key={data.laptop.id}
                 fluid={data.laptop.childImageSharp.fluid}
-              />
+              /> */}
 
               {/* {data.images.nodes.map(image => (
           <Img key={image.id} fluid={image.childImageSharp.fluid} />
