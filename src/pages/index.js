@@ -67,6 +67,9 @@ const Hero = styled.section`
   }
 `
 
+const ColoredMain = styled.main`
+  background-color: ${colors.offwhite};
+`
 // Removed text shadow code - fun effect but not necessary for desired look.
 // text-shadow: -1px 1px 2px #000, 1px 1px 2px #000, 1px -1px 0 #000,
 
@@ -224,21 +227,35 @@ const Intro = styled.h2`
 `
 
 const AboutSection = styled.section`
+  overflow: hidden;
   max-width: 85%;
+  display: grid;
+  grid-template-areas:
+    "a b b"
+    "a b b"
+    "c c c";
   margin: auto;
-  height: 75vh;
+  height: inherit;
   text-align: center;
   background-color: inherit;
   font-size: 2rem;
-  line-height: 3.25rem;
+  line-height: 2.5rem;
+  height: 75vh;
+  margin: 2rem auto;
   & h3 {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    grid-area: a;
     font-size: 2.5rem;
-    padding: 3.5rem 0;
-    line-height: 6rem;
+    margin: 0;
+    padding: 0;
   }
-  & :last-child {
-    margin-top: 3.25rem;
-    padding: 1.5rem 0;
+  & p {
+    grid-area: c;
+  }
+  & .img {
+    grid-area: b;
   }
 `
 
@@ -295,7 +312,46 @@ const IndexPage = () => {
           }
         }
       }
-
+      thirdeye: file(relativePath: { eq: "index/thirdeye.jpg" }) {
+        id
+        childImageSharp {
+          fluid {
+            ...GatsbyImageSharpFluid
+          }
+        }
+      }
+      palette: file(relativePath: { eq: "index/palette.jpg" }) {
+        id
+        childImageSharp {
+          fluid {
+            ...GatsbyImageSharpFluid
+          }
+        }
+      }
+      splash: file(relativePath: { eq: "index/splash.jpg" }) {
+        id
+        childImageSharp {
+          fluid {
+            ...GatsbyImageSharpFluid
+          }
+        }
+      }
+      brickwall: file(relativePath: { eq: "index/brickwall.jpg" }) {
+        id
+        childImageSharp {
+          fluid {
+            ...GatsbyImageSharpFluid
+          }
+        }
+      }
+      blueorange: file(relativePath: { eq: "index/blueorange.jpg" }) {
+        id
+        childImageSharp {
+          fluid {
+            ...GatsbyImageSharpFluid
+          }
+        }
+      }
       laptop: file(relativePath: { eq: "index/laptop.webp" }) {
         id
         childImageSharp {
@@ -306,11 +362,12 @@ const IndexPage = () => {
       }
     }
   `)
+  console.log(data.thirdeye)
   const Desktop = (
     <>
       <Layout>
         <SEO title="Home" />
-        <main>
+        <ColoredMain>
           <Theme color>
             <Hero>
               <Greeting>
@@ -342,12 +399,18 @@ const IndexPage = () => {
           <Theme>
             <AboutSection>
               <h3>
-                Independent.
+                <span>Independent.</span>
                 <br />
-                Impassioned.
+                <span>Impassioned.</span>
                 <br />
-                Iconoclastic.
+                <span>Iconoclastic.</span>
               </h3>
+              <div className="img">
+                <Img
+                  key={data.thirdeye.id}
+                  fluid={data.thirdeye.childImageSharp.fluid}
+                />
+              </div>
               <p>
                 I design & develop professional, dynamic web pages and
                 applications for small business owners, artists, activists, and
@@ -396,7 +459,7 @@ const IndexPage = () => {
               </div>
             </SkillsSection>
           </Theme>
-        </main>
+        </ColoredMain>
       </Layout>
       <GlobalStyles />
     </>
