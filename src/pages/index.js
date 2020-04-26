@@ -20,6 +20,14 @@ const styles = {
   font: "Montserrat",
   maxWidthDesktop: "85vw",
   maxWidth: "95vw",
+  gradient1: "rgba(71, 161, 239, .75)",
+  gradient2: "rgba(189, 147, 189, 0.75)",
+  gradient3: `${colors.taupe}`,
+  gradientW1: `rgba(252, 252, 252, .1)`,
+  gradientW2: `rgba(252, 252, 252, .25)`,
+  gradientW3: `rgba(252, 252, 252, .5)`,
+  gradientW4: `rgba(252, 252, 252, 1)`,
+  animDuration: "7.5s",
 }
 // CSS Todos
 // I think I need make a separate mobile layout to render if
@@ -28,17 +36,25 @@ const styles = {
 
 // Styled Components
 const Hero = styled.section`
-  max-width: 85%;
-  margin: auto;
-  display: grid;
+  background-image: ${props =>
+      props.bgimg
+        ? `linear-gradient(
+          ${styles.gradientW1},
+           ${styles.gradientW2},
+           ${styles.gradientW3},
+           ${styles.gradientW4}
+           ), `
+        : ""}
+    url(${props =>
+      props.bgimg ? props.bgimg.rainbow.childImageSharp.fluid.src : ""});
+  background-position: center; /* Center the image */
+  background-repeat: no-repeat; /* Do not repeat the image */
+  background-size: cover; /* Resize the background image to cover the entire container */
   font-family: ${styles.font}, arial;
-  grid-template-rows: repeat(3, 1fr);
-  grid-template-columns: repeat(5, 1fr);
-  gap: 1rem;
-  padding-bottom: 2rem;
+
   // Unsure about this padding - get input
-  padding-top: 2rem;
-  height: 75vh;
+
+  height: 70vh;
   & .animate {
     animation-fill-mode: forwards;
   }
@@ -67,6 +83,17 @@ const Hero = styled.section`
   }
 `
 
+const HeroGrid = styled.div`
+  height: inherit;
+  display: grid;
+  grid-template-rows: repeat(3, 1fr);
+  grid-template-columns: repeat(5, 1fr);
+  max-width: 85%;
+  margin: auto;
+  gap: 1rem;
+  padding-top: 2rem;
+`
+
 const ColoredMain = styled.main`
   background-color: ${colors.offwhite};
 `
@@ -79,19 +106,19 @@ const firstAnimation = keyframes`
 0% {
   color: transparent;
 }
-3% {
+6% {
   color: transparent;
 }
-5% {
+9% {
   color: hotpink;
 }
-8% {
-  color: #f7f7f7
+10% {
+  color: ${colors.darkText}
 } 
 `
 
 const FirstToAppear = styled.span`
-  animation: ${firstAnimation} 10s ease-in;
+  animation: ${firstAnimation} ${styles.animDuration} ease-in;
 `
 
 const secondAnimation = keyframes`
@@ -101,48 +128,80 @@ const secondAnimation = keyframes`
 11% {
   color: transparent;
 }
-13% {
+14% {
   color: hotpink;
 }
-16% {
-  color: #f7f7f7;
+15% {
+  color: ${colors.darkText};
 }
 `
 
 const SecondToAppear = styled.span`
-  animation: ${secondAnimation} 10s ease-in;
+  animation: ${secondAnimation} ${styles.animDuration} ease-in;
 `
 
 const thirdAnimation = keyframes`
 0% {
-  transform: translateX(70vw)
+  color: transparent
 }
-19% {
-  transform: translateX(70vw)
+20% {
+  color: transparent
 }
-25% {
-  transform: translateX(-2rem)
+23% {
+  color: hotpink;
 }
-28% {
-  transform: translateX(1rem)
+24% {
+  color: ${colors.darkText};
+}
+`
+const ThirdToAppear = styled.span`
+  animation: ${thirdAnimation} ${styles.animDuration} ease-in;
+`
+const fourthAnimation = keyframes`
+0% {
+  color: transparent
 }
 31% {
-  transform: translateX(-.5rem)
+  color: transparent
 }
-33% {
-  transform: translateX(0)
+34% {
+  color: hotpink;
+}
+35% {
+  color: ${colors.darkText};
 }
 `
 
+const FourthToAppear = styled.span`
+  animation: ${fourthAnimation} ${styles.animDuration} ease-in;
+`
+
+const fifthAnimation = keyframes`
+0% {
+  color: transparent
+}
+34% {
+  color: transparent
+}
+37% {
+  color: hotpink;
+}
+40% {
+  color: ${colors.darkText};
+}
+`
+const FifthToAppear = styled.span`
+  animation: ${fifthAnimation} ${styles.animDuration} ease-in;
+`
 const Greeting = styled.h1`
   overflow: hidden;
   grid-row: 1 / 2;
-  grid-column: 1 / 3;
+  grid-column: 5 / -1;
   margin: auto;
   font-size: 3rem;
-  color: ${colors.offwhite};
+  color: ${colors.darkText};
     -1px -1px 0 #000;
-  text-align: center;
+  text-align: right;
   max-width: 100%;
   line-height: 4rem;
   max-height: 100%;
@@ -162,7 +221,7 @@ const Greeting = styled.h1`
     font-size: 3rem;
   }
   @media screen and (max-width: 2000px) and (max-height: 1100px) {
-    line-height: 4rem;
+    line-height: 5rem;
     font-size: 3.5rem;
   }
 
@@ -193,18 +252,15 @@ const Greeting = styled.h1`
 
 const Intro = styled.h2`
   overflow: hidden;
-  grid-row: 3 / 4;
-  grid-column: 3 / 6;
+  grid-row: 2 / 4;
+  grid-column: 4 / -1;
+  text-align: right;
   margin: 0;
   font-size: 2.75rem;
-  color: ${colors.offwhite};
-  text-align: center;
+  color: ${colors.darkText};
   line-height: 3rem;
-  margin: auto;
-  max-height: 100%;
-  max-width: 100%;
-  min-width: 100%;
-  animation: ${thirdAnimation} 10s ease-in;
+  margin: auto 0 auto auto;
+  width: 75%;
   @media screen and (min-width: 2000px) {
     line-height: 4.5rem;
   }
@@ -213,8 +269,8 @@ const Intro = styled.h2`
     line-height: 6rem;
   }
   @media screen and (max-width: 1600px) {
-    font-size: 2rem;
-    line-height: 3rem;
+    font-size: 2.25rem;
+    line-height: 4.5rem;
   }
   @media screen and (max-width: 910px) {
     font-size: 1.9rem;
@@ -246,10 +302,11 @@ const AboutSection = styled.section`
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    align-items: center;
     grid-area: a;
     font-size: 2.5rem;
     margin: 0;
-    padding: 0;
+    padding-bottom: 2.5rem;
   }
   & p {
     grid-area: c;
@@ -299,7 +356,7 @@ const IndexPage = () => {
       portland: file(relativePath: { eq: "index/portland.jpg" }) {
         id
         childImageSharp {
-          fluid(maxHeight: 330, maxWidth: 900) {
+          fluid(maxWidth: 1500) {
             ...GatsbyImageSharpFluid
           }
         }
@@ -320,7 +377,7 @@ const IndexPage = () => {
           }
         }
       }
-      palette: file(relativePath: { eq: "index/palette.jpg" }) {
+      palette: file(relativePath: { eq: "index/paintpalette.jpg" }) {
         id
         childImageSharp {
           fluid {
@@ -328,7 +385,7 @@ const IndexPage = () => {
           }
         }
       }
-      splash: file(relativePath: { eq: "index/splash.jpg" }) {
+      splash: file(relativePath: { eq: "index/watersplash.jpg" }) {
         id
         childImageSharp {
           fluid {
@@ -360,6 +417,30 @@ const IndexPage = () => {
           }
         }
       }
+      rainbow: file(relativePath: { eq: "index/rainbow.jpg" }) {
+        id
+        childImageSharp {
+          fluid(maxWidth: 2000) {
+            ...GatsbyImageSharpFluid
+          }
+        }
+      }
+      cans: file(relativePath: { eq: "index/cans.jpg" }) {
+        id
+        childImageSharp {
+          fluid(maxWidth: 1500) {
+            ...GatsbyImageSharpFluid
+          }
+        }
+      }
+      colorexplosion: file(relativePath: { eq: "index/colorexplosion.jpg" }) {
+        id
+        childImageSharp {
+          fluid(maxWidth: 1500) {
+            ...GatsbyImageSharpFluid
+          }
+        }
+      }
     }
   `)
   console.log(data.thirdeye)
@@ -369,31 +450,37 @@ const IndexPage = () => {
         <SEO title="Home" />
         <ColoredMain>
           <Theme color>
-            <Hero>
-              <Greeting>
-                <FirstToAppear className={"animate first"}>Hi,</FirstToAppear>
-                <br />
-                <SecondToAppear className={"animate second"}>
-                  I'm Sage{" "}
-                </SecondToAppear>
-              </Greeting>
-              <Img
-                key={data.portland.id}
-                fluid={data.portland.childImageSharp.fluid}
-              />
-              <Img key={data.code.id} fluid={data.code.childImageSharp.fluid} />
-              {/* <Img
+            <Hero bgimg={data}>
+              <HeroGrid>
+                <Greeting>
+                  <FirstToAppear className={"animate first"}>Hi,</FirstToAppear>
+                  <br />
+                  <SecondToAppear className={"animate second"}>
+                    I'm Sage{" "}
+                  </SecondToAppear>
+                </Greeting>
+                {/* <Img
+                  key={data.code.id}
+                  fluid={data.code.childImageSharp.fluid}
+                />
+                <Img
+                  key={data.portland.id}
+                  fluid={data.rainbow.childImageSharp.fluid}
+                /> */}
+                {/* <Img
                 key={data.laptop.id}
                 fluid={data.laptop.childImageSharp.fluid}
               /> */}
 
-              {/* {data.images.nodes.map(image => (
+                {/* {data.images.nodes.map(image => (
           <Img key={image.id} fluid={image.childImageSharp.fluid} />
         ))} */}
-              <Intro>
-                a web developer & entrepreneur headquartered in the silicon
-                forest, Portland, OR.
-              </Intro>
+                <Intro>
+                  <ThirdToAppear>a web developer & entrepreneur</ThirdToAppear>
+                  <br />
+                  <FourthToAppear>headquartered in the PNW.</FourthToAppear>
+                </Intro>
+              </HeroGrid>
             </Hero>
           </Theme>
           <Theme>
